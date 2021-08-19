@@ -19,14 +19,14 @@ const Homepage = () => {
             return res.json();
           })
           .then(data => {
-            console.log(data);
+           setBlogs(data);
           })
       }, [])
 
     return ( 
         
         <div className="home">
-            {/* <BlogList blogs={blogs} title="All Blogs" handleDelete = {handleDelete}/> */}
+           {blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete = {handleDelete}/> } 
             
         {/* <BlogList blogProp={blogs.filter((blog) => blog.author.toLowerCase() === "jake")} title="Jake's Blogs" /> */}
             
