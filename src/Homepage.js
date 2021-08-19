@@ -19,7 +19,7 @@ const Homepage = () => {
             return res.json();
           })
           .then(data => {
-            setBlogs(data);
+            console.log(data);
           })
       }, [])
 
