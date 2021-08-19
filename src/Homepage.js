@@ -8,13 +8,19 @@ const Homepage = () => {
         {author:"Robert", content: "Lorem Ipsum is simply dummy text", title: "Art Of Robert", id:3},
         {author:"Jake", content: "Lorem Ipsum ....", title: "Art Of Jake", id:4}
     ])
+
+    const handleDelete = (deleteId) => {
+        // This line of code makes a new array of blogs, filering out the ones not to be deleted
+        const newBlogs = blogs.filter((blog) => blog.id !== deleteId); 
+        setBlogs(newBlogs);
+    }
     
     return ( 
         
         <div className="home">
-            <BlogList blogProp={blogs} title="All Blogs"/>
+            <BlogList blogs={blogs} title="All Blogs" handleDelete = {handleDelete}/>
 
-            <BlogList blogProp={blogs.filter((blog) => blog.author.toLowerCase() === "jake")} title="Jake's Blogs" />
+        {/* <BlogList blogProp={blogs.filter((blog) => blog.author.toLowerCase() === "jake")} title="Jake's Blogs" /> */}
             
         </div>
      );
