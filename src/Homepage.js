@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 
 const Homepage = () => {
    
-  const {data: blogs, isPending, error}= useFetch();
+  const {data: blogs, isPending, error}= useFetch('http://localhost:8000/blogs');
 
     return ( 
         
