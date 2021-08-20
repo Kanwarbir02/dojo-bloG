@@ -6,15 +6,6 @@ const Homepage = () => {
    
   const {data: blogs, isPending, error}= useFetch();
 
-    // const handleDelete = (deleteId) => {
-    //     // This line of code makes a new array of blogs, filering out the ones not to be deleted
-    //     const newBlogs = blogs.filter((blog) => blog.id !== deleteId); 
-    //     setData(newBlogs);
-    // }
-
-    
-    
-
     return ( 
         
         <div className="home">
@@ -22,7 +13,7 @@ const Homepage = () => {
           {isPending && <h2>Loading blogs...</h2>}
           {blogs && <BlogList blogs={blogs} title="All Blogs"/> } 
             
-        {/* <BlogList blogProp={blogs.filter((blog) => blog.author.toLowerCase() === "jake")} title="Jake's Blogs" /> */}
+       
             
         </div>
      );
