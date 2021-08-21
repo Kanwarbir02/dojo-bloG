@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 
 const Create = () => {
 
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("mario");
+    const history = useHistory();
 
     const handleSubmit = e => {
         e.preventDefault();
-        const blog = {b_title: title, b_body: body, b_author: author};
+        const blog = {title, body, author};
 
         fetch('http://localhost:8000/blogs/', {
             method: 'POST',
@@ -16,6 +18,8 @@ const Create = () => {
             body: JSON.stringify(blog)
             }).then(() => {
             console.log('new blog added');
+
+            history.push("/")
         })
   }
     
