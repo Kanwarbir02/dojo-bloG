@@ -106,3 +106,13 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.details-blog button{
+  margin-top: 10px;
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}

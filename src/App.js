@@ -4,6 +4,7 @@ import './index.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Create from './Create';
 import BlogDetails from './BlogDetails';
+import NotFound from './NotFoundPage';
 
 function App() {
   
@@ -25,6 +26,10 @@ function App() {
 
           <Route exact path="/blogs/:id" >
               <BlogDetails />
+          </Route>
+
+          <Route path="*">
+            <NotFound />
           </Route>
 
         </Switch>
